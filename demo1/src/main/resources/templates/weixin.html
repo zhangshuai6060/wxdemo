@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script src="/jquery-3.3.1.min.js"></script>
+<script src="/jquery.qrcode.js"></script>
+<script src="/utf.js"></script>
+<script type="text/javascript">
+    $(function () {
+        // text:当打开的时候 去下面连接 生成二维码的内容
+        $('#Article-content').html("")
+        $("#Article-content").qrcode({
+            render : "canvas",    //设置渲染方式，有table和canvas，使用canvas方式渲染性能相对来说比较好
+            //注意这里填写 你 微信公众号里面网页授权域名,    //扫描二维码后显示的内容,可以直接填一个网址，扫描二维码后自动跳向该链接
+            text: "http://www.baidu.com/api/bind/getCode",
+            width : "200",               //二维码的宽度
+            height : "200",              //二维码的高度
+            background : "#ffffff",       //二维码的后景色
+            foreground : "#000000",        //二维码的前景色
+        });
+    })
+</script>
+<body>
+
+    <div id="Article-content">
+
+    </div>
+</body>
+</html>
